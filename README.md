@@ -1,1 +1,0 @@
-Database Tools (dbt) Fundamentals.
