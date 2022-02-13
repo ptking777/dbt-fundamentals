@@ -1,7 +1,3 @@
-{{ config (
-    materialized="view"
-)}}
-
 with customers as (
 
     select
@@ -9,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from dtc-de-338616.jaffle_shop.customers
+    from  {{ source('jaffle_shop', 'customers') }}
 
 )
 

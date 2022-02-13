@@ -1,7 +1,3 @@
-{{ config (
-    materialized="view"
-)}}
-
 with orders as (
 
     select
@@ -10,7 +6,7 @@ with orders as (
         order_date,
         status
 
-    from dtc-de-338616.jaffle_shop.orders
+    from {{ source('jaffle_shop', 'orders') }}
 
 )
 
